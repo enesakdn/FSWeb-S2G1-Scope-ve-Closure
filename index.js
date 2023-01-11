@@ -64,9 +64,11 @@ Aşağıdaki takimSkoru() fonksiyonununda aşağıdakileri yapınız:
 Not: Bu fonskiyon, aşağıdaki diğer görevler için de bir callback fonksiyonu olarak da kullanılacak
 */
 
-function takimSkoru(/*Kodunuzu buraya yazınız*/){
-    /*Kodunuzu buraya yazınız*/
-}
+function takimSkoru(){
+  let score = Math.floor(Math.random()*16+10)  
+  return score;
+ }
+ console.log(takimSkoru())
 
 
 
@@ -86,8 +88,18 @@ Aşağıdaki macSonucu() fonksiyonununda aşağıdakileri yapınız:
 }
 */ 
 
-function macSonucu(/*Kodunuzu buraya yazınız*/){
-  /*Kodunuzu buraya yazınız*/
+function macSonucu(takimSkoru, oynananCeyrek){
+  
+  let sonuc = {}
+  let evSahibi = 0;
+  let konukTakim = 0;
+  for (let i = 1; i<=oynananCeyrek;i++) {
+    evSahibi += takimSkoru();
+    konukTakim += takimSkoru();
+  }
+  sonuc.EvSahibi = evSahibi;
+  sonuc.KonukTakim = konukTakim;
+  return sonuc
 }
 
 
@@ -109,9 +121,15 @@ Aşağıdaki periyotSkoru() fonksiyonununda aşağıdakileri yapınız:
   */
 
 
-function periyotSkoru(/*Kodunuzu buraya yazınız*/) {
-  /*Kodunuzu buraya yazınız*/
-
+function periyotSkoru(takimSkoruP) {
+  let sonuc = {};
+   let evSahibi;
+   let konukTakim;
+   evSahibi = takimSkoruP();
+   konukTakim = takimSkoruP();
+   sonuc.EvSahibi = evSahibi;
+   sonuc.KonukTakim = konukTakim;
+   return sonuc
 }
 
 
